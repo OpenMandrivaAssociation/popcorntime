@@ -1,0 +1,5 @@
+# js files
+addFilter("E: wrong-script-interpreter")
+addFilter("W: non-executable-script")
+# is precompiled..
+addFilter("W: arch-dependent-file-in-usr-share")
