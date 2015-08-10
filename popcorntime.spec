@@ -1,21 +1,25 @@
 %define debug_package	%{nil}
+%define oname Popcorn-Time
+%define oversion 0.3.8-2
+# useless provides
+%define __noautoprov 'npm\\(ansi-regex|asap|async|bencode|bncode|boom|castv2-client|combined-stream|cryptiles|debug|delayed-stream|end-of-stream|extend|forever-agent|form-data|glob|graceful-fs|hawk|hoek|inherits|json-stringify-safe|lodash|magnet-uri|mime|mime-db|mime-types|minimatch|minimist|mkdirp|ms|network-address|oauth-sign|once|q|qs|readable-stream|request|rimraf|sax|sntp|strip-ansi|tunnel-agent|underscore|upnp-device-client|upnp-mediarenderer-client|xmlbuilder\\)'
+# self provided requires
+%define __noautoreq  'npm\\(ansi-regex|asap|async|bencode|bncode|boom|browserify|buffer-equal|castv2-client|combined-stream|cryptiles|debug|deep-extend|delayed-stream|end-of-stream|extend|extend.js|forever-agent|form-data|fs-extra|glob|graceful-fs|hawk|inherits|inquirer|json-stringify-safe|lodash|lru-queue|magnet-uri|mime|mime-db|mime-types|minimatch|minimist|mkdirp|ms|network-address|oauth-sign|once|q|qap|qs|querystring|readable-stream|request|rimraf|sax|sntp|strip-ansi|tunnel-agent|uglify-js|underscore|underscore.string|upnp-device-client|upnp-mediarenderer-client|xmlbuilder|hoek\\)|nodejs\\(engine\\)'
 
 Summary:	Watch movies in steaming
 Name:		popcorntime
-Version:	0.3.8
+Version:	0.3.8.2
 Release:	1
 License:	GPLv3
 Group:		Video
 Url:		https://popcorntime.io/
 # git clone https://git.popcorntime.io/popcorntime/desktop.git
 %ifarch %{ix86}
-Source0:	http://get.popcorntime.io/build/Popcorn-Time-%{version}-0-Linux-32.tar.xz
+Source0:	http://45.55.92.180/build/%{oname}-%{oversion}-Linux-32.tar.xz
 %else
-Source0:	http://get.popcorntime.io/build/Popcorn-Time-%{version}-0-Linux-64.tar.xz
+Source0:	http://178.62.190.82/build/%{oname}-%{oversion}-Linux-64.tar.xz
 %endif
-
-
-
+Source100:	popcorntime.rpmlintrc
 
 %description
 Allow any computer user to watch movies easily streaming 
@@ -73,7 +77,6 @@ EOF
 chmod +x %{buildroot}%{_bindir}/%{name} 
 
 find %{buildroot} -size 0 -delete
-
 
 %files
 %doc LICENSE.txt CHANGELOG.md README.md
