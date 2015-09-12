@@ -9,7 +9,7 @@
 Summary:	Watch movies in steaming
 Name:		popcorntime
 Version:	0.3.8.2
-Release:	1
+Release:	2
 License:	GPLv3
 Group:		Video
 Url:		https://popcorntime.io/
