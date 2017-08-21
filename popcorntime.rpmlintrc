@@ -1,5 +1,7 @@
 # js files
 addFilter("E: wrong-script-interpreter")
 addFilter("W: non-executable-script")
+addFilter("W: script-without-shebang")
 # is precompiled..
 addFilter("W: arch-dependent-file-in-usr-share")
+addFilter("E: unstripped-binary-or-object")
